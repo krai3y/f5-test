@@ -1,7 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/swiper/swiper-bundle";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import "variables";
+@import "extends";
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 
 @media (min-width: 1400px) {
   .container {
@@ -25,29 +28,6 @@
   }
 }
 
-@function getSize($n) {
-  @return $n * 2px;
-}
-
-@mixin font-family-H{
-  font-family: "Archivo", sans-serif !important;
-}
-
-@mixin font-weight{
-  font-weight: 700 !important;
-}
-
-@mixin btn{
-  background-color: #443FDE !important;
-  color: white !important;
-
-  &:hover, &:focus{
-    background-color: #ffffff !important;
-    border: 1px, solid, #443FDE !important;
-    color: #3E404C !important;
-  }
-}
-
 body{
   font-family: "Inter", sans-serif !important;
 }
@@ -57,16 +37,21 @@ body{
 }
 
 .color-accent{
-  color: #443FDE !important;
+  color: $color-accent !important;
 }
 
 .color-black{
-  color: #030407 !important;
+  color: $color-black !important;
 }
 
 header{
   margin-bottom: 64px;
-  border-bottom: 1px solid #EBEBEF;;
+  border-bottom: 1px solid #EBEBEF;
+}
+
+footer{
+  margin-top: 64px;
+  border-top: 1px solid #EBEBEF;
 }
 
 .navbar-toggler{
@@ -80,93 +65,118 @@ header{
 }
 
 .btn-header{
-  @include btn;
+  @extend %btn;
   padding: 10px 20px;
 }
 
 .btn-search{
-  @include btn;
+  @extend %btn;
   padding: 10px 32px;
 }
 
 .btn-jobs{
-  @include btn;
+  @extend %btn;
   padding: 10px 20px;
 }
 
 h1 {
-  @include font-family-H;
-  @include font-weight;
-  color: #030407;
-  font-size: getSize(32) !important; // Вызов функции SCSS
+  @extend %archivo;
+  @include fonts(64px, $color-black, 700);
 }
 
 h2 {
-  @include font-family-H;
-  @include font-weight;
-  color: #030407;
-  font-size: getSize(24) !important;
+  @extend %archivo;
+  @include fonts(48px, $color-black, 700);
 }
 
 h3 {
-  @include font-family-H;
-  @include font-weight;
-  color: #030407;
-  font-size:  getSize(20) !important;
+  @extend %archivo;
+  @include fonts(40px, $color-black, 700);
 }
 
 h4 {
-  @include font-family-H;
-  @include font-weight;
-  color: #030407;
-  font-size: getSize(16) !important;
+  @extend %archivo;
+  @include fonts(32px, $color-black, 700);
 }
 
 h5 {
-  @include font-family-H;
-  @include font-weight;
-  color: #030407;
-  font-size: getSize(10) !important;
+  @extend %archivo;
+  @include fonts(20px, $color-black, 700);
 }
 
 h6 {
-  @include font-family-H;
-  @include font-weight;
-  font-size: getSize(9);
+  @extend %archivo;
+  @include fonts(18px, $color-black, 700);
 }
 
 .p-regular{
-  font-weight: 400;
-  color: #3E404C;
-  font-size: 16px;
+  @include fonts(16px, #3E404C, 400);
   line-height: 32px;
 }
 
 .p-small{
-  font-weight: 500 !important;
-  color: #3E404C;
-  font-size: 14px;
+  @include fonts(14px, #3E404C, 500);
 }
 
 .detail{
-  color: #3E404C;
-  font-size: 14px;
-  font-weight: 400;
+  @include fonts(14px, #3E404C, 400);
   letter-spacing: 1.2px;
 }
 
 .footnote{
-  color: #84889A;
-  font-size: 12px;
-  font-weight: 400;
+  @include fonts(12px, #84889A, 400);
 }
 
-header{
-  margin-bottom: 64px;
+.p-about{
+  @include fonts(24px, #3E404C, 500);
 }
 
-footer{
-  margin-top: 64px;
+.p-news{
+  @include fonts(14px, #606476, 600);
+  letter-spacing: 1px;
+}
+
+.p-news-btn{
+  @include fonts(15px, #24262D, 500);
+}
+
+.job-detail{
+  @include fonts(14px, #606476, 500);
+}
+
+.job-category{
+  @include fonts(14px, $color-accent, 500);
+  background-color: #F3F3FC;
+  padding: 6px 12px;
+}
+
+.job-hours{
+  @include fonts(14px, #C98B40, 500);
+  background-color: #FEF7F1;
+  padding: 6px 12px;
+}
+
+.slider-employees{
+  @include fonts(14px, #246B49, 500);
+  background-color: #F1F8F4;
+  padding: 10px 15px;
+}
+
+.name-company{
+  @include fonts(16px, $color-black, 500);
+}
+
+.subheading{
+  @include fonts(16px, $color-black, 500);
+}
+
+.p-custom{
+  @include fonts(14px, #606476, 400);
+}
+
+.p-footer{
+  @include fonts(14px, #84889A, 600);
+  letter-spacing: 1px;
 }
 
 .home-block{
@@ -191,10 +201,10 @@ footer{
 
   &:hover, &:focus, &:active{
     cursor: pointer;
-    border: 1px solid #443FDE;
+    border: 1px solid $color-accent;
 
     .icon {
-      color: #443FDE;
+      color: $color-accent;
     }
 }
 
@@ -218,44 +228,12 @@ footer{
   color: #6D7D93;
 
   &:hover{
-    color: #443FDE;
+    color: $color-accent;
   }
 }
 
 .bg-gray{
   background-color: #F9F9FB;
-}
-
-.job-category{
-  color: #443FDE;
-  background-color: #F3F3FC;
-  padding: 6px 12px;
-}
-
-.job-hours{
-  color: #C98B40;
-  background-color: #FEF7F1;
-  padding: 6px 12px;
-}
-
-.job-detail{
-  font-size: 14px;
-  font-weight: 500;
-  color: #606476;
-}
-
-.name-company{
-  font-size: 16px;
-  font-weight: 500;
-  color: #030407;
-}
-
-.slider-employees{
-  color: #246B49;
-  background-color: #F1F8F4;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 .swiper-button-next,
@@ -304,42 +282,11 @@ footer{
   content: "";
 }
 
-.subheading{
-  color: #030407;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.p-custom{
-  font-size: 14px;
-  font-weight: 400;
-  color:  #606476;
-}
-
 .under-pic{
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../images/under-pic.svg");
   text-align: center;
-}
-
-.p-about{
-  font-size: 24px;
-  font-weight: 500;
-  color: #3E404C;
-}
-
-.p-news{
-  font-size: 14px;
-  font-weight: 600;
-  color: #606476;
-  letter-spacing: 1px;
-}
-
-.p-news-btn{
-  font-size: 15px;
-  font-weight: 500;
-  color: #24262D;
 }
 
 .bg-search-up{
@@ -360,16 +307,9 @@ footer{
   max-width: 490px;
 }
 
-.p-footer{
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #84889A;
-}
-
 .col-md-7{
   input:hover, input:active, input:focus{
-    border: 1px solid #443FDE !important;
+    border: 1px solid $color-accent !important;
     box-shadow: none;
   }
 }

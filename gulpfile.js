@@ -55,8 +55,7 @@ function watching() {
   watch(['app/js/main.js'], scripts)
   watch([
     'app/pug/index.pug',
-    'app/pug/includes/*.pug',
-    'app/pug/includes/main/*.pug',
+    'app/pug/includes/**/*.pug',
   ], pugHtml)
   watch(['app/pug/index.pug'], pugHtml)
   watch(['app/*.html']).on('change', browserSync.reload)
@@ -73,7 +72,7 @@ function building() {
     'app/js/main.min.js',
     'app/*.html',
     'app/images/*.*',
-  ], { base: 'app', encoding: false }) // buffer: false заменяет encoding: false
+  ], { base: 'app', encoding: false })
     .pipe(dest('dist'));
 }
 
