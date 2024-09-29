@@ -12706,6 +12706,20 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  font-family: "Archivo", sans-serif !important;
+}
+
+.btn-jobs, .btn-search, .btn-header {
+  background-color: #443FDE !important;
+  color: white !important;
+}
+.btn-jobs:hover, .btn-search:hover, .btn-header:hover, .btn-jobs:focus, .btn-search:focus, .btn-header:focus {
+  background-color: #ffffff !important;
+  border: 1px, solid, #443FDE !important;
+  color: #3E404C !important;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1140px;
@@ -12725,20 +12739,6 @@ button.swiper-pagination-bullet {
     height: 407px;
   }
 }
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  font-family: "Archivo", sans-serif !important;
-}
-
-.btn-jobs, .btn-search, .btn-header {
-  background-color: #443FDE !important;
-  color: white !important;
-}
-.btn-jobs:hover, .btn-search:hover, .btn-header:hover, .btn-jobs:focus, .btn-search:focus, .btn-header:focus {
-  background-color: #ffffff !important;
-  border: 1px, solid, #443FDE !important;
-  color: #3E404C !important;
-}
-
 body {
   font-family: "Inter", sans-serif !important;
 }
@@ -12873,6 +12873,30 @@ h6, .h6 {
   font-weight: 500;
 }
 
+.job-category {
+  font-size: 14px;
+  color: #443FDE;
+  font-weight: 500;
+  background-color: #F3F3FC;
+  padding: 6px 12px;
+}
+
+.job-hours {
+  font-size: 14px;
+  color: #C98B40;
+  font-weight: 500;
+  background-color: #FEF7F1;
+  padding: 6px 12px;
+}
+
+.slider-employees {
+  font-size: 14px;
+  color: #246B49;
+  font-weight: 500;
+  background-color: #F1F8F4;
+  padding: 10px 15px;
+}
+
 .name-company {
   font-size: 16px;
   color: #030407;
@@ -12947,26 +12971,6 @@ h6, .h6 {
 
 .bg-gray {
   background-color: #F9F9FB;
-}
-
-.job-category {
-  color: #443FDE;
-  background-color: #F3F3FC;
-  padding: 6px 12px;
-}
-
-.job-hours {
-  color: #C98B40;
-  background-color: #FEF7F1;
-  padding: 6px 12px;
-}
-
-.slider-employees {
-  color: #246B49;
-  background-color: #F1F8F4;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 .swiper-button-next,
